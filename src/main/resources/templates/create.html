@@ -3,6 +3,17 @@
 <head th:replace="/layout :: head">
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #input[type=text] {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
 <h3>Add City</h3>
@@ -29,17 +40,40 @@
         </div>
         <div>
             <label>Acreage</label>
-            <input type="number" th:field="*{acreage}"/>
+            <input
+                    style="width: 100%;
+                    padding: 12px 0px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;"
+                    type="number" th:field="*{acreage}"/>
             <span style="color: red" th:if="${#fields.hasErrors('acreage')}" th:errors="*{acreage}">Acreage Error</span>
         </div>
         <div>
             <label>Population</label>
-            <input type="number" th:field="*{population}"/>
+            <input  style="width: 100%;
+                    padding: 12px 0px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;"
+                    type="number" th:field="*{population}"/>
             <span style="color: red" th:if="${#fields.hasErrors('population')}" th:errors="*{population}">Population Error</span>
         </div>
         <div>
             <label>GDP</label>
-            <input type="number" th:field="*{gdp}"/>
+            <input
+                    style="width: 100%;
+                    padding: 12px 0px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;"
+                    type="number" th:field="*{gdp}"/>
             <span style="color: red" th:if="${#fields.hasErrors('gdp')}" th:errors="*{gdp}">GDP Error</span>
         </div>
         <div>
