@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Modify City</h3>
+<p>
+    <a th:href="@{/city/index}">
+        Back to city list
+    </a>
+</p>
+<div id="form">
+    <form th:object="${city}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name</label>
+            <input type="text" th:field="*{name}"/>
+            <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </div>
+        <div>
+            <label>Nation</label>
+            <select th:field="*{nation}">
+                <th:block th:each="c: ${nations}">
+                    <option th:value="${c.id}" th:text="${c.name}"></option>
+                </th:block>
+            </select>
+        </div>
+        <div class="cusdetail">
+            <label>Acreage</label>
+            <input type="number" th:field="*{acreage}">
+            <span style="color: red" th:if="${#fields.hasErrors('acreage')}" th:errors="*{acreage}"></span>
+        </div>
+        <div class="cusdetail">
+            <label>Population</label>
+            <input type="number" th:field="*{population}">
+            <span style="color: red" th:if="${#fields.hasErrors('population')}" th:errors="*{population}"></span>
+        </div>
+        <div class="cusdetail">
+            <label>GDP</label>
+            <input type="number" th:field="*{gdp}">
+            <span style="color: red" th:if="${#fields.hasErrors('gdp')}" th:errors="*{gdp}"></span>
+        </div>
+        <div class="cusdetail">
+            <label>Description</label>
+            <input  type="text" th:field="*{description}">
+        </div>
+        <input type="submit" value="Modify">
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
